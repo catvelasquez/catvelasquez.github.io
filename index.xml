@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Taller Espacio y Ciudad on Nombre Alumno</title>
+    <title>Taller Espacio y Ciudad on Catalina Velásquez</title>
     <link>https://catvelasquez.github.io/</link>
-    <description>Recent content in Taller Espacio y Ciudad on Nombre Alumno</description>
+    <description>Recent content in Taller Espacio y Ciudad on Catalina Velásquez</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 17 Jun 2020 19:30:08 +1000</lastBuildDate>
@@ -12,12 +12,21 @@
     
     
     <item>
-      <title>Encargo 1</title>
+      <title>Documentación proyecto</title>
       <link>https://catvelasquez.github.io/docs/proyecto/encargo-1/</link>
       <pubDate>Wed, 17 Jun 2020 19:30:08 +1000</pubDate>
       
       <guid>https://catvelasquez.github.io/docs/proyecto/encargo-1/</guid>
       <description>Objetivos generales y específicos del Proyecto a realizar.</description>
+    </item>
+    
+    <item>
+      <title>Encargo 1</title>
+      <link>https://catvelasquez.github.io/docs/encargo-1/</link>
+      <pubDate>Wed, 17 Jun 2020 19:30:08 +1000</pubDate>
+      
+      <guid>https://catvelasquez.github.io/docs/encargo-1/</guid>
+      <description>Primer encargo fusion 360</description>
     </item>
     
     <item>
