@@ -1,59 +1,59 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Taller Espacio y Ciudad on Catalina Velásquez</title>
-    <link>https://catvelasquez.github.io/</link>
-    <description>Recent content in Taller Espacio y Ciudad on Catalina Velásquez</description>
+    <title>Fabricación Digital on Catalina Velásquez</title>
+    <link>https://catvelasquez.github.io/fabricaciondigital/</link>
+    <description>Recent content in Fabricación Digital on Catalina Velásquez</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 17 Jun 2020 19:30:08 +1000</lastBuildDate>
     
-	<atom:link href="https://catvelasquez.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://catvelasquez.github.io/fabricaciondigital/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Documentación Proyecto</title>
-      <link>https://catvelasquez.github.io/docs/proyecto/documentaci%C3%B3n-proyecto/index-2/</link>
+      <title>Eames DCW Chair</title>
+      <link>https://catvelasquez.github.io/fabricaciondigital/docs/encargo-1/</link>
       <pubDate>Wed, 17 Jun 2020 19:30:08 +1000</pubDate>
       
-      <guid>https://catvelasquez.github.io/docs/proyecto/documentaci%C3%B3n-proyecto/index-2/</guid>
-      <description>Objetivos generales y específicos del Proyecto a realizar.</description>
-    </item>
-    
-    <item>
-      <title>Referentes</title>
-      <link>https://catvelasquez.github.io/docs/referentes/</link>
-      <pubDate>Wed, 17 Jun 2020 19:30:08 +1000</pubDate>
-      
-      <guid>https://catvelasquez.github.io/docs/referentes/</guid>
-      <description>Resumen investigativo y listado de referencias.</description>
-    </item>
-    
-    <item>
-      <title>Encargo 1</title>
-      <link>https://catvelasquez.github.io/docs/encargo-1/</link>
-      <pubDate>Wed, 17 Jun 2020 19:30:08 +1000</pubDate>
-      
-      <guid>https://catvelasquez.github.io/docs/encargo-1/</guid>
-      <description>Primer encargo fusion 360</description>
-    </item>
-    
-    <item>
-      <title>Presentaciones</title>
-      <link>https://catvelasquez.github.io/docs/galeria-encargo-2/</link>
-      <pubDate>Wed, 17 Jun 2020 19:30:08 +1000</pubDate>
-      
-      <guid>https://catvelasquez.github.io/docs/galeria-encargo-2/</guid>
-      <description>presentación</description>
+      <guid>https://catvelasquez.github.io/fabricaciondigital/docs/encargo-1/</guid>
+      <description>Objetivos general y específico del Taller del segundo trimestre de 2020.</description>
     </item>
     
     <item>
       <title>Configuración</title>
-      <link>https://catvelasquez.github.io/docs/configuracion/</link>
+      <link>https://catvelasquez.github.io/fabricaciondigital/docs/configuracion/</link>
       <pubDate>Wed, 17 Jun 2020 19:30:08 +1000</pubDate>
       
-      <guid>https://catvelasquez.github.io/docs/configuracion/</guid>
+      <guid>https://catvelasquez.github.io/fabricaciondigital/docs/configuracion/</guid>
       <description>Tutorial de configuración básica del menú y otros elementos del tema.</description>
+    </item>
+    
+    <item>
+      <title>Ejemplo Shortcodes</title>
+      <link>https://catvelasquez.github.io/fabricaciondigital/docs/ejemplo/</link>
+      <pubDate>Wed, 17 Jun 2020 19:30:08 +1000</pubDate>
+      
+      <guid>https://catvelasquez.github.io/fabricaciondigital/docs/ejemplo/</guid>
+      <description>Uso de los Shortcodes para agregar contenido en el sitio de documentación.</description>
+    </item>
+    
+    <item>
+      <title>Ejemplos Markdown</title>
+      <link>https://catvelasquez.github.io/fabricaciondigital/docs/markdown/</link>
+      <pubDate>Wed, 17 Jun 2020 19:30:08 +1000</pubDate>
+      
+      <guid>https://catvelasquez.github.io/fabricaciondigital/docs/markdown/</guid>
+      <description>Ejemplos de uso de lenguaje Markdown para redactar las publicaciones.</description>
+    </item>
+    
+    <item>
+      <title>Objetivos del Curso</title>
+      <link>https://catvelasquez.github.io/fabricaciondigital/docs/objetivos/</link>
+      <pubDate>Wed, 17 Jun 2020 19:30:08 +1000</pubDate>
+      
+      <guid>https://catvelasquez.github.io/fabricaciondigital/docs/objetivos/</guid>
+      <description>Objetivos general y específico del Taller del segundo trimestre de 2020.</description>
     </item>
     
   </channel>
