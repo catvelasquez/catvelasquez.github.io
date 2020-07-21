@@ -139,7 +139,125 @@
 <li>Grabado de superficies sólidas</li>
 <li>Maquinado en 3D</li>
 </ul>
-<p><img src="/fabricaciondigital/img/cnc/uso.png" alt="Aplicación"></p>
+<p><img src="/fabricaciondigital/img/cnc/uso.png" alt="Aplicación">
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/fabricaciondigital/img/cnc1.mp4"  type="video/mp4">
+    </video>
+</div>
+
+</p>
+<hr>
+<h3 id="ejemplo-de-modelado-con-fresa-cnc">Ejemplo de modelado con fresa CNC:</h3>
+<p>En el siguiente ejemplo se dara a conocer la manera adecuada de generar una simulación con fresa de 6 mm CNC de 3 ejes a partir de una silla mediante Fusion 360.</p>
+<ul>
+<li>Se deberán mecanizar las patas y travesaños de la silla y luego el asiento. Lo anterior se debe a que este último componente necesita cierta curvatura en su estructura final y tambien posée un grosor distinto a los otros componentes.</li>
+</ul>
+<h5 id="paso-1"><strong>Paso 1:</strong></h5>
+<p>Se deben mover los distintos componentes que queremos mecanizar hacia la <strong>plancha de terciado</strong> (en este caso media plancha de 15 mm) que sería nuestra área de corte, de tal forma que las <strong>caras donde existan calados queden hacia arriba</strong>. La plancha de terciado que se menciona debe ser previamente confeccionada con el uso del comando <strong>sketch</strong> de Fusion 360.
+<div>
+    <iframe 
+    src="https://alumnos2114.autodesk360.com/shares/public/SH56a43QTfd62c1cd96875f6526f62c8861b?mode=embed"
+    width="100%" 
+    height="450" 
+    allowfullscreen="true" 
+    webkitallowfullscreen="true" 
+    mozallowfullscreen="true"  
+    frameborder="0">
+    </iframe>    
+</div>
+
+</p>
+<p><img src="/fabricaciondigital/img/cnc/paso1.png" alt="paso1"></p>
+<h5 id="paso-2"><strong>Paso 2:</strong></h5>
+<p>En esta etapa pasamos a las <strong>herramientas de manufactura</strong> de Fusion 360. Para lograr que la simulación de los primeros calados se genere correctamente, hay que seleccionar los <strong>vectores inferiores</strong> de cada calado en cada pieza, a esto se le denomina <strong>contour interior</strong> en Fusion 360. Además, es necesario tener en cuenta que para una fresa de 6 mm no es óptimo generar los calados con una sola pasada por la plancha, es por esto que, en este caso, se generan <em>depths</em> o hendiduras vectoriales de 3 mm lo que le indicará a la fresa que debe pasar por ese vector 5 veces (la fresa recorre toda la línea azul) y realizará el calado de forma gradual hasta alcanzar la profundidad correcta.</p>
+<ul>
+<li>Es recomendable que se incerte en el material (en eje Z) hasta el 50% de la fresa mientras se realiza el calado.</li>
+</ul>
+<p><img src="/fabricaciondigital/img/cnc/paso2.png" alt="paso2"></p>
+<ul>
+<li><em>Visualización de depth de 3 mm</em></li>
+</ul>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/fabricaciondigital/img/b.mp4"  type="video/mp4">
+    </video>
+</div>
+
+
+<h5 id="paso-3"><strong>Paso 3:</strong></h5>
+<p>En este paso nos movemos del contour interior al <strong>2D pocket</strong>. Utilizando este comando en Fusion 360, se deben seleccionar las caras donde se encuentran los calados realizados en el paso 1. Al igual que en el paso anterior es necesario generar <em>depths</em> de 3 mm. Como resultado, se obtendrán una gran cantidad de trayectorias dentro del área seleccionada y al realizar la simulación se verá como la fresa comienza a rebajar la cara que se selecciona.</p>
+<p><img src="/fabricaciondigital/img/cnc/paso3.png" alt="paso3"></p>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/fabricaciondigital/img/c.mp4"  type="video/mp4">
+    </video>
+</div>
+
+
+<h5 id="paso-4"><strong>Paso 4:</strong></h5>
+<p>Continuamos realizando otro contour pero ahora de la parte <strong>exterior</strong> de cada pieza que conforma la silla. De la misma manera que en los pasos anteriores, tenemos que realizar <em>depths</em> de 3 mm.  Al realizar la simulación la fresa seguirá el contorno natural de la pieza que se encuentra en la plancha. Es importante destacar, que <strong>no es recomendable que la fresa realice los cortes en todo el contorno de la pieza sin dejar un punto de apoyo</strong>, debido a que se pueden generar cortes no deseados e incluso romper parte de la pieza que se esta mecanizando. Para que lo anterior no ocurre, es necesario generar <em>tabs</em> o pequeñas áreas donde la fresa no va a realizar un mecanizado. Al momento de realizar la simulación, veremos como la fresa &ldquo;salta&rdquo; los <em>tabs</em> y no recorta esos espacios.</p>
+<ul>
+<li>El tamaño y distancia entre cada <em>tab</em> dependerá de las características de la pieza y el material que se este usando. La idea es que sean lo suficientemente fuertes para sostener la pieza mecanizada unida a la plancha luego de que la fresa realice el contour exterior.</li>
+</ul>
+<p><img src="/fabricaciondigital/img/cnc/paso4.png" alt="paso4"></p>
+<ul>
+<li><em>Las piezas que se encuentran dentro de los círculos punteados son los denominados tabs.</em>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/fabricaciondigital/img/d.mp4"  type="video/mp4">
+    </video>
+</div>
+
+</li>
+</ul>
+<h6 id="--visualización-final-del-sistema-de-mecanizado-de-patas-y-travesaños-de-la-silla-">- <strong>Visualización final del sistema de mecanizado de patas y travesaños de la silla :</strong></h6>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/fabricaciondigital/img/e.mp4"  type="video/mp4">
+    </video>
+</div>
+
+
+<h5 id="paso-5"><strong>Paso 5:</strong></h5>
+<p>Luego de realizar el mecanizado de los pasos anterior, debemos continuar con el asiento. El objetivo es poder lograr la <strong>flexibilidad de material</strong> en base a recorte que se necesita para esta parte de la silla. Partimos realizando el comando <strong>sketch</strong> en Fusion 360 y generamos una plancha de terciado con un espesor de 9 mm, la idea es que el asiento quede incerto en la plancha. Pasamos a las <strong>herramientas de manufactura</strong> y con el comando <strong>2D Contour</strong> seleccionamos el vector exterior del asiento. Al realizar la simulación vemos como la fresa perfila la parte exterior de la pieza.</p>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/fabricaciondigital/img/g.mp4"  type="video/mp4">
+    </video>
+</div>
+
+
+<h5 id="paso-6"><strong>Paso 6:</strong></h5>
+<p>Finalmente, ocupamos la función <strong>trace</strong> y seleccionamos los vectores interiores de la pieza para que la fresa recorra estos trazos. Es importante dejar material en estos trazos, ya que no se quiere hacer un recorte en profundidad a todo el espesor de la plancha. Por lo tanto, cuando la fresa entre en el material llegara hasta la mitad del espesor que le dimos en un comienzo, es decir, solo generará una profundidad de 4,5 mm.</p>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/fabricaciondigital/img/f.mp4"  type="video/mp4">
+    </video>
+</div>
+
+
 
 </div>
 </div>
