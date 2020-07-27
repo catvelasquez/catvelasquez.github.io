@@ -176,11 +176,9 @@
 <p>En esta etapa pasamos a las <strong>herramientas de manufactura</strong> de Fusion 360. Para lograr que la simulación de los primeros calados se genere correctamente, hay que seleccionar los <strong>vectores inferiores</strong> de cada calado en cada pieza, a esto se le denomina <strong>contour interior</strong> en Fusion 360. Además, es necesario tener en cuenta que para una fresa de 6 mm no es óptimo generar los calados con una sola pasada por la plancha, es por esto que, en este caso, se generan <em>depths</em> o hendiduras vectoriales de 3 mm lo que le indicará a la fresa que debe pasar por ese vector 5 veces (la fresa recorre toda la línea azul) y realizará el calado de forma gradual hasta alcanzar la profundidad correcta.</p>
 <ul>
 <li>Es recomendable que se incerte en el material (en eje Z) hasta el 50% de la fresa mientras se realiza el calado.</li>
-</ul>
-<p><img src="/fabricaciondigital/img/cnc/paso2.png" alt="paso2"></p>
-<ul>
 <li><em>Visualización de depth de 3 mm</em></li>
 </ul>
+<p><img src="/fabricaciondigital/img/cnc/p2.png" alt="paso2">
 <div>
     <video 
     width="100%" 
@@ -190,10 +188,11 @@
     </video>
 </div>
 
-
+</p>
 <h5 id="paso-3"><strong>Paso 3:</strong></h5>
 <p>En este paso nos movemos del contour interior al <strong>2D pocket</strong>. Utilizando este comando en Fusion 360, se deben seleccionar las caras donde se encuentran los calados realizados en el paso 1. Al igual que en el paso anterior es necesario generar <em>depths</em> de 3 mm. Como resultado, se obtendrán una gran cantidad de trayectorias dentro del área seleccionada y al realizar la simulación se verá como la fresa comienza a rebajar la cara que se selecciona.</p>
 <p><img src="/fabricaciondigital/img/cnc/paso3.png" alt="paso3"></p>
+<p><img src="/fabricaciondigital/img/cnc/11.jpg" alt="paso3"></p>
 <div>
     <video 
     width="100%" 
@@ -236,6 +235,7 @@
 
 <h5 id="paso-5"><strong>Paso 5:</strong></h5>
 <p>Luego de realizar el mecanizado de los pasos anterior, debemos continuar con el asiento. El objetivo es poder lograr la <strong>flexibilidad de material</strong> en base a recorte que se necesita para esta parte de la silla. Partimos realizando el comando <strong>sketch</strong> en Fusion 360 y generamos una plancha de terciado con un espesor de 9 mm, la idea es que el asiento quede incerto en la plancha. Pasamos a las <strong>herramientas de manufactura</strong> y con el comando <strong>2D Contour</strong> seleccionamos el vector exterior del asiento. Al realizar la simulación vemos como la fresa perfila la parte exterior de la pieza.</p>
+<p><img src="/fabricaciondigital/img/cnc/1.jpg" alt="paso3">
 <div>
     <video 
     width="100%" 
@@ -245,9 +245,9 @@
     </video>
 </div>
 
-
+</p>
 <h5 id="paso-6"><strong>Paso 6:</strong></h5>
-<p>Finalmente, ocupamos la función <strong>trace</strong> y seleccionamos los vectores interiores de la pieza para que la fresa recorra estos trazos. Es importante dejar material en estos trazos, ya que no se quiere hacer un recorte en profundidad a todo el espesor de la plancha. Por lo tanto, cuando la fresa entre en el material llegara hasta la mitad del espesor que le dimos en un comienzo, es decir, solo generará una profundidad de 4,5 mm.</p>
+<p>Finalmente, ocupamos la función <strong>trace</strong> y seleccionamos los vectores interiores de la pieza para que la fresa recorra estos trazos. Es importante dejar material en estos trazos, ya que no se quiere hacer un recorte en profundidad a todo el espesor de la plancha. Por lo tanto, cuando la fresa entre en el material llegara hasta la mitad del espesor que le dimos en un comienzo, es decir, solo generará una profundidad de 4,5 mm.
 <div>
     <video 
     width="100%" 
@@ -257,7 +257,425 @@
     </video>
 </div>
 
+</p>
+<h5 id="paso-7"><strong>Paso 7:</strong></h5>
+<p>Ahora es necesario terminar la silla con la modelación del <strong>respaldo</strong>. En Fusion 360 tenemos que esta en el modo de manufactura en donde iniciaremos un <strong>setup</strong>. En este caso ocuparemos la misma fresadora que estuvimos ocupando en los pasos anteriores, pero con una pequeña modificación en el largo del soporte de la fresa, el cual se duplica y queda en 40 mm.</p>
+<p><img src="/fabricaciondigital/img/cnc/edicionfresa.png" alt="fresa"></p>
+<p>Volvemos al modo de diseño, para poder generar un sketchup en donde se genere un rectangulo que sea mas grande que la silueta del respaldo que ya tenemos, para luego a partir de un extrude lograr realizar un bloque que cubra todo el respaldo inicial. Luego debemos hacer una <strong>proyección del respaldo</strong> que se encuentra dentro del bloque, esta proyección debe estar en la cara  superior del bloque. Gracias a lo anterior, se logra optimizar el mecanizado.</p>
+<ul>
+<li>La línea morada corresponde a la proyección descrita:</li>
+</ul>
+<p><img src="/fabricaciondigital/img/cnc/proyeccion.png" alt="fresa"></p>
+<p>Para iniciar la simulación, tenemos que generar un <strong>desbaste adaptativo</strong>, en donde se remueve material del bloque que hicimos para acelerar el proceso de obtención de la superficie. Para este desbaste es necesario dejar como <strong>matching boundary</strong> la proyección realizada anteriormente y así solo se mecanizará dentro de esa área.</p>
+<ul>
+<li>Como no podemos desbastar tanto material a la vez, el <strong>optimal loud</strong> de la fresa debe ser solo un 3 mm.</li>
+</ul>
+<p><img src="/fabricaciondigital/img/cnc/trayectoria1.png" alt="fresa"></p>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/fabricaciondigital/img/paso7.mp4"  type="video/mp4">
+    </video>
+</div>
 
+
+<h5 id="paso-8"><strong>Paso 8:</strong></h5>
+<p>Luego, hay que realizar una <strong>terminación paralela</strong> en donde el <strong>matching boundary</strong> sigue siendo la proyección de la pieza. La idea es que la trayectoria que se genera tenga la forma de la pieza al interior del bloque.</p>
+<p><img src="/fabricaciondigital/img/cnc/respaldo.png" alt="fresa"></p>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/fabricaciondigital/img/paso8.mp4"  type="video/mp4">
+    </video>
+</div>
+
+
+<p>Como se hace una terminación paralela en una sola dirección, es necesario realizar lo mismo pero en sentido perpendicular al inicial. Para realizar esto se debe copiar la primera terminación paralela en Fusion 360, y <strong>cambiarle el ángulo de dirección a 90 grados.</strong></p>
+<p><img src="/fabricaciondigital/img/cnc/respaldo2.png" alt="fresa"></p>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/fabricaciondigital/img/paso8segundaparte.mp4"  type="video/mp4">
+    </video>
+</div>
+
+
+<ul>
+<li>Resultado final respaldo</li>
+</ul>
+<p><img src="/fabricaciondigital/img/cnc/respaldofinal.png" alt="fresa"></p>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/fabricaciondigital/img/paso8final.mp4"  type="video/mp4">
+    </video>
+</div>
+
+
+<p><img src="/fabricaciondigital/img/cnc/respaldoreal.png" alt="fresa"></p>
+<h5 id="paso-9"><strong>Paso 9:</strong></h5>
+<p>Es necesario repetir los pasos 7 y 8, pero ahora en la cara opuesta del bloque.</p>
+<p><img src="/fabricaciondigital/img/cnc/respaldoamboslados.png" alt="fresa"></p>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/fabricaciondigital/img/caraopuesta.mp4"  type="video/mp4">
+    </video>
+</div>
+
+
+<h5 id="galeria"><strong>Galeria:</strong></h5>
+<p>
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+
+<div class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://catvelasquez.github.io/fabricaciondigital//img/galeria3//1.jpg');" >
+				      <img itemprop="thumbnail" src="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//1.jpg" alt="1st" />
+				    </div>
+			      <figcaption>
+		          <p>1st</p>
+			      </figcaption>
+				    <a href="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//1.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://catvelasquez.github.io/fabricaciondigital//img/galeria3//10.jpg');" >
+				      <img itemprop="thumbnail" src="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//10.jpg" alt="10th" />
+				    </div>
+			      <figcaption>
+		          <p>10th</p>
+			      </figcaption>
+				    <a href="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//10.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://catvelasquez.github.io/fabricaciondigital//img/galeria3//11.jpg');" >
+				      <img itemprop="thumbnail" src="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//11.jpg" alt="11th" />
+				    </div>
+			      <figcaption>
+		          <p>11th</p>
+			      </figcaption>
+				    <a href="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//11.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://catvelasquez.github.io/fabricaciondigital//img/galeria3//12.jpg');" >
+				      <img itemprop="thumbnail" src="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//12.jpg" alt="12th" />
+				    </div>
+			      <figcaption>
+		          <p>12th</p>
+			      </figcaption>
+				    <a href="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//12.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://catvelasquez.github.io/fabricaciondigital//img/galeria3//13.jpg');" >
+				      <img itemprop="thumbnail" src="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//13.jpg" alt="13th" />
+				    </div>
+			      <figcaption>
+		          <p>13th</p>
+			      </figcaption>
+				    <a href="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//13.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://catvelasquez.github.io/fabricaciondigital//img/galeria3//14.jpg');" >
+				      <img itemprop="thumbnail" src="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//14.jpg" alt="14th" />
+				    </div>
+			      <figcaption>
+		          <p>14th</p>
+			      </figcaption>
+				    <a href="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//14.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://catvelasquez.github.io/fabricaciondigital//img/galeria3//15.jpg');" >
+				      <img itemprop="thumbnail" src="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//15.jpg" alt="15th" />
+				    </div>
+			      <figcaption>
+		          <p>15th</p>
+			      </figcaption>
+				    <a href="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//15.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://catvelasquez.github.io/fabricaciondigital//img/galeria3//16.jpg');" >
+				      <img itemprop="thumbnail" src="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//16.jpg" alt="16th" />
+				    </div>
+			      <figcaption>
+		          <p>16th</p>
+			      </figcaption>
+				    <a href="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//16.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://catvelasquez.github.io/fabricaciondigital//img/galeria3//17.jpg');" >
+				      <img itemprop="thumbnail" src="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//17.jpg" alt="17th" />
+				    </div>
+			      <figcaption>
+		          <p>17th</p>
+			      </figcaption>
+				    <a href="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//17.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://catvelasquez.github.io/fabricaciondigital//img/galeria3//18.jpg');" >
+				      <img itemprop="thumbnail" src="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//18.jpg" alt="18th" />
+				    </div>
+			      <figcaption>
+		          <p>18th</p>
+			      </figcaption>
+				    <a href="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//18.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://catvelasquez.github.io/fabricaciondigital//img/galeria3//20.jpg');" >
+				      <img itemprop="thumbnail" src="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//20.jpg" alt="20th" />
+				    </div>
+			      <figcaption>
+		          <p>20th</p>
+			      </figcaption>
+				    <a href="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//20.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://catvelasquez.github.io/fabricaciondigital//img/galeria3//21.jpg');" >
+				      <img itemprop="thumbnail" src="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//21.jpg" alt="21st" />
+				    </div>
+			      <figcaption>
+		          <p>21st</p>
+			      </figcaption>
+				    <a href="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//21.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://catvelasquez.github.io/fabricaciondigital//img/galeria3//22.jpg');" >
+				      <img itemprop="thumbnail" src="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//22.jpg" alt="22nd" />
+				    </div>
+			      <figcaption>
+		          <p>22nd</p>
+			      </figcaption>
+				    <a href="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//22.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://catvelasquez.github.io/fabricaciondigital//img/galeria3//24.jpg');" >
+				      <img itemprop="thumbnail" src="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//24.jpg" alt="24th" />
+				    </div>
+			      <figcaption>
+		          <p>24th</p>
+			      </figcaption>
+				    <a href="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//24.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://catvelasquez.github.io/fabricaciondigital//img/galeria3//25.jpg');" >
+				      <img itemprop="thumbnail" src="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//25.jpg" alt="25th" />
+				    </div>
+			      <figcaption>
+		          <p>25th</p>
+			      </figcaption>
+				    <a href="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//25.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://catvelasquez.github.io/fabricaciondigital//img/galeria3//27.jpg');" >
+				      <img itemprop="thumbnail" src="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//27.jpg" alt="27th" />
+				    </div>
+			      <figcaption>
+		          <p>27th</p>
+			      </figcaption>
+				    <a href="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//27.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://catvelasquez.github.io/fabricaciondigital//img/galeria3//28.jpg');" >
+				      <img itemprop="thumbnail" src="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//28.jpg" alt="28th" />
+				    </div>
+			      <figcaption>
+		          <p>28th</p>
+			      </figcaption>
+				    <a href="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//28.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://catvelasquez.github.io/fabricaciondigital//img/galeria3//29.jpg');" >
+				      <img itemprop="thumbnail" src="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//29.jpg" alt="29th" />
+				    </div>
+			      <figcaption>
+		          <p>29th</p>
+			      </figcaption>
+				    <a href="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//29.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://catvelasquez.github.io/fabricaciondigital//img/galeria3//30.jpg');" >
+				      <img itemprop="thumbnail" src="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//30.jpg" alt="30th" />
+				    </div>
+			      <figcaption>
+		          <p>30th</p>
+			      </figcaption>
+				    <a href="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//30.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://catvelasquez.github.io/fabricaciondigital//img/galeria3//4.jpg');" >
+				      <img itemprop="thumbnail" src="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//4.jpg" alt="4th" />
+				    </div>
+			      <figcaption>
+		          <p>4th</p>
+			      </figcaption>
+				    <a href="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//4.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://catvelasquez.github.io/fabricaciondigital//img/galeria3//5.jpg');" >
+				      <img itemprop="thumbnail" src="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//5.jpg" alt="5th" />
+				    </div>
+			      <figcaption>
+		          <p>5th</p>
+			      </figcaption>
+				    <a href="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//5.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://catvelasquez.github.io/fabricaciondigital//img/galeria3//6.jpg');" >
+				      <img itemprop="thumbnail" src="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//6.jpg" alt="6th" />
+				    </div>
+			      <figcaption>
+		          <p>6th</p>
+			      </figcaption>
+				    <a href="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//6.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://catvelasquez.github.io/fabricaciondigital//img/galeria3//7.jpg');" >
+				      <img itemprop="thumbnail" src="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//7.jpg" alt="7th" />
+				    </div>
+			      <figcaption>
+		          <p>7th</p>
+			      </figcaption>
+				    <a href="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//7.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://catvelasquez.github.io/fabricaciondigital//img/galeria3//8.jpg');" >
+				      <img itemprop="thumbnail" src="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//8.jpg" alt="8th" />
+				    </div>
+			      <figcaption>
+		          <p>8th</p>
+			      </figcaption>
+				    <a href="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//8.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://catvelasquez.github.io/fabricaciondigital//img/galeria3//9.jpg');" >
+				      <img itemprop="thumbnail" src="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//9.jpg" alt="9th" />
+				    </div>
+			      <figcaption>
+		          <p>9th</p>
+			      </figcaption>
+				    <a href="https://catvelasquez.github.io/fabricaciondigital//img/galeria3//9.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+</div>
+ 
+
+
+
+  
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="/js/load-photoswipe.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+</p>
 
 </div>
 </div>
