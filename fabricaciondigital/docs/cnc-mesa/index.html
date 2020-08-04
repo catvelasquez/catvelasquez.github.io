@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Bonus Mesa - Catalina Velásquez</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" href="https://catvelasquez.github.io/fabricaciondigital/favicon.png">
+
+  
+  
+  <link rel="stylesheet" href="/fabricaciondigital/css/style.min.df52c7c8fb17040fdfb216293b7a711034ee517647a54f8a626ea24f0382f02b.css">
+  
+
+  
+
+</head>
+
+<body class='page page-default-single'>
+  <div id="main-menu-mobile" class="main-menu-mobile">
+  <ul>
+    
+    
+    <li class="menu-item-inicio">
+      <a href="/fabricaciondigital/">
+        <span>Inicio</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-documentación">
+      <a href="/fabricaciondigital/docs/">
+        <span>Documentación</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+  <div class="wrapper">
+    <div class='header'>
+  <div class="container">
+    <div class="logo">
+      <a href="https://catvelasquez.github.io/fabricaciondigital/"><img alt="Logo" src="/fabricaciondigital/images/logo.png" /></a>
+    </div>
+    <div class="logo-mobile">
+      <a href="https://catvelasquez.github.io/fabricaciondigital/"><img alt="Logo" src="/fabricaciondigital/images/logo.png" /></a>
+    </div>
+    <div id="main-menu" class="main-menu">
+  <ul>
+    
+    
+    <li class="menu-item-inicio">
+      <a href="/fabricaciondigital/">
+        <span>Inicio</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-documentación">
+      <a href="/fabricaciondigital/docs/">
+        <span>Documentación</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+    <button id="toggle-main-menu-mobile" class="hamburger hamburger--slider" type="button">
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</button>
+  </div>
+</div>
+
+
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="container pt-2 pt-md-6 pb-3 pb-md-6">
+      <div class="row">
+        <div class="col-12 col-md-3 mb-3">
+          <div class="sidebar">
+            
+<div class="docs-menu">
+  <h4>Documentación</h4>
+  <ul>
+    
+    <li class="">
+      <a href="https://catvelasquez.github.io/fabricaciondigital/docs/encargo-1/">Eames DCW Chair</a>
+    </li>
+    
+    <li class="">
+      <a href="https://catvelasquez.github.io/fabricaciondigital/docs/cnc/">Mecanizado CNC</a>
+    </li>
+    
+    <li class="active ">
+      <a href="https://catvelasquez.github.io/fabricaciondigital/docs/cnc-mesa/">Bonus Mesa</a>
+    </li>
+    
+    <li class="">
+      <a href="https://catvelasquez.github.io/fabricaciondigital/docs/ejemplo/">Ejemplo Shortcodes</a>
+    </li>
+    
+    <li class="">
+      <a href="https://catvelasquez.github.io/fabricaciondigital/docs/markdown/">Ejemplos Markdown</a>
+    </li>
+    
+  </ul>
+</div>
+
+          </div>
+        </div>
+        <div class="col-12 col-md-9">
+          
+<h1 class="title">Bonus Mesa</h1>
+<div class="content ">
+  <hr>
+<h3 id="otras-simulaciones-con-router-cnc">Otras simulaciones con router CNC</h3>
+<p>Una de las líneas en las que se usa el mecanizado CNC es para la <strong>creación de inmobiliario</strong>. Es por esto que el siguiene ejemplo mostrará el mecanizado CNC de una mesa. Debido al tamaño de las piezas, a diferencia de la silla mecanizada en otro post, <strong>divideremos este mecanizado en 2 partes</strong>. En la primera parte se realizará la simulación de los componentes de la parte inferior de la mesa, todo lo relacionado con la base. En la segunda parte se realizará la simulación de la parte superior, es decir, superficie de la mesa.</p>
+<p><img src="/fabricaciondigital/img/cnc/mesa/mesa.png" alt="Router"></p>
+<ul>
+<li><strong>Planimetria mesa:</strong></li>
+</ul>
+<p><img src="/fabricaciondigital/img/cnc/mesa/planimetria1.png" alt="paso1"></p>
+<p><img src="/fabricaciondigital/img/cnc/mesa/planimetria2.png" alt="paso1"></p>
+<h4 id="primera-parte">Primera parte</h4>
+<h5 id="paso-1"><strong>Paso 1:</strong></h5>
+<p>Se deben mover los distintos componentes que queremos mecanizar hacia la <strong>plancha de terciado</strong> (en este caso una plancha de 15 mm) que sería nuestra área de corte, de tal forma que las <strong>caras donde existan calados queden hacia arriba</strong>. La plancha de terciado que se menciona debe ser previamente confeccionada con el uso del comando <strong>sketch</strong> de Fusion 360.
+<div>
+    <iframe 
+    src="https://alumnos2114.autodesk360.com/shares/public/SH56a43QTfd62c1cd968995f0964afdc8777?mode=embed"
+    width="100%" 
+    height="450" 
+    allowfullscreen="true" 
+    webkitallowfullscreen="true" 
+    mozallowfullscreen="true"  
+    frameborder="0">
+    </iframe>    
+</div>
+
+</p>
+<p><img src="/fabricaciondigital/img/cnc/mesa/patas.png" alt="paso1"></p>
+<h5 id="paso-2"><strong>Paso 2:</strong></h5>
+<p>En esta etapa pasamos a las <strong>herramientas de manufactura</strong> de Fusion 360. Para lograr que la simulación de los primeros calados se genere correctamente, hay que seleccionar los <strong>vectores inferiores</strong> de cada calado en cada pieza, a esto se le denomina <strong>contour interior</strong> en Fusion 360. Además, es necesario tener en cuenta que para una fresa de 4 mm no es óptimo generar los calados con una sola pasada por la plancha, es por esto que, en este caso, se generan <em>depths</em> o hendiduras vectoriales de 3 mm lo que le indicará a la fresa que debe pasar por ese vector cierta cantidad de veces y realizará el calado de forma gradual hasta alcanzar la profundidad correcta.</p>
+<ul>
+<li>Es recomendable que se incerte en el material (en eje Z) hasta el 50% de la fresa mientras se realiza el calado.</li>
+</ul>
+<p><img src="/fabricaciondigital/img/cnc/mesa/contour1patas.png" alt="paso2"></p>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/fabricaciondigital/img/contour1patasmesa.mp4"  type="video/mp4">
+    </video>
+</div>
+
+
+<h5 id="paso-3"><strong>Paso 3:</strong></h5>
+<p>Continuamos realizando otro contour pero ahora de la parte <strong>exterior</strong> de cada pieza que conforma la parte inferior de la mesa. De la misma manera que en los pasos anteriores, tenemos que realizar <em>depths</em> de 3 mm.  Al realizar la simulación la fresa seguirá el contorno natural de la pieza que se encuentra en la plancha. Es importante destacar, que <strong>no es recomendable que la fresa realice los cortes en todo el contorno de la pieza sin dejar un punto de apoyo</strong>, debido a que se pueden generar cortes no deseados e incluso romper parte de la pieza que se esta mecanizando. Para que lo anterior no ocurre, es necesario generar <em>tabs</em> o pequeñas áreas donde la fresa no va a realizar un mecanizado. Al momento de realizar la simulación, veremos como la fresa &ldquo;salta&rdquo; los <em>tabs</em> y no recorta esos espacios.</p>
+<ul>
+<li>El tamaño y distancia entre cada <em>tab</em> dependerá de las características de la pieza y el material que se este usando. La idea es que sean lo suficientemente fuertes para sostener la pieza mecanizada unida a la plancha luego de que la fresa realice el contour exterior.</li>
+</ul>
+<p><img src="/fabricaciondigital/img/cnc/mesa/contourexternopatas.png" alt="paso4"></p>
+<h4 id="segunda-parte">Segunda parte</h4>
+<p>Es necesario <strong>repetir los pasos 1 y 2</strong> de la primera parte, pero ahora con el resto de los elementos de le mesa.</p>
+<p><img src="/fabricaciondigital/img/cnc/mesa/superficie.png" alt="paso4"></p>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/fabricaciondigital/img/contour1superficie.mp4"  type="video/mp4">
+    </video>
+</div>
+
+
+<h5 id="paso-3-1"><strong>Paso 3:</strong></h5>
+<p>En este paso nos movemos del contour interior al <strong>2D pocket</strong>. Utilizando este comando en Fusion 360, se deben seleccionar las caras donde se encuentran los calados mas profundos que el diametro original de la plancha. Al igual que en el paso anterior es necesario generar <em>depths</em> de 3 mm. Como resultado, se obtendrán una gran cantidad de trayectorias dentro del área seleccionada y al realizar la simulación se verá como la fresa comienza a rebajar la cara que se selecciona.</p>
+<p><img src="/fabricaciondigital/img/cnc/mesa/pocketsuperficie.png" alt="paso3"></p>
+<h5 id="paso-4"><strong>Paso 4:</strong></h5>
+<p>En este paso es necesario generar un <strong>desbaste adaptativo</strong>, en donde se remueve material de la plancha que hicimos para acelerar el proceso de obtención de la superficie. Se realiza este procedimiento ya que estos calados no tienen una superficie regular plana.</p>
+<ul>
+<li>Como no podemos desbastar tanto material a la vez, el <strong>optimal loud</strong> de la fresa debe ser solo un 3 mm.</li>
+</ul>
+<p><img src="/fabricaciondigital/img/cnc/mesa/desbastesuperficie.png" alt="paso3"></p>
+<p>Además, para realizar el traspaso de la plancha de terciado, es necesario realizar un <strong>contour interior exclusivamente a este segmento de la superficie de la mesa</strong>.</p>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/fabricaciondigital/img/desbasteycontoursuperficie.mp4"  type="video/mp4">
+    </video>
+</div>
+
+
+<h5 id="paso-5"><strong>Paso 5:</strong></h5>
+<p>Finalmente, al igual que en la primera parte se realiza un <strong>contour exterior</strong> de cada pieza que conforma la superficie la mesa. De la misma manera que en los pasos anteriores, tenemos que realizar <em>depths</em> de 3 mm.</p>
+
+</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="sub-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="sub-footer-inner">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/fabricaciondigital/js/scripts.min.1237ff71925bb8625c97a9af8db4c54525258bedfd7c47493daaff723bea755e.js"></script>
+  
+
+  
+  
+  
+    
+  
+
+
+</body>
+
+</html>
