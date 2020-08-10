@@ -17,7 +17,7 @@
       <pubDate>Wed, 17 Jun 2020 19:30:08 +1000</pubDate>
       
       <guid>https://catvelasquez.github.io/fabricaciondigital/docs/encargo-1/</guid>
-      <description>Objetivos general y específico del Taller del segundo trimestre de 2020.</description>
+      <description>Su historia y características.</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Wed, 17 Jun 2020 19:30:08 +1000</pubDate>
       
       <guid>https://catvelasquez.github.io/fabricaciondigital/docs/cnc/</guid>
-      <description>¿ Qué es ? El Router CNC funciona con una máquina de fresado equipada con motores en cada uno de sus ejes que son controlados por una computadora mediante un CNC (Control Numérico Computarizado).</description>
+      <description>Qué es y algunas simulaciones.</description>
     </item>
     
     <item>
@@ -35,7 +35,16 @@
       <pubDate>Wed, 17 Jun 2020 19:30:08 +1000</pubDate>
       
       <guid>https://catvelasquez.github.io/fabricaciondigital/docs/cnc-mesa/</guid>
-      <description>Otras simulaciones con router CNC Una de las líneas en las que se usa el mecanizado CNC es para la creación de inmobiliario. Es por esto que el siguiene ejemplo mostrará el mecanizado CNC de una mesa.</description>
+      <description>Otras simulaciones con router CNC.</description>
+    </item>
+    
+    <item>
+      <title>Materiales</title>
+      <link>https://catvelasquez.github.io/fabricaciondigital/docs/materiales/</link>
+      <pubDate>Wed, 17 Jun 2020 19:30:08 +1000</pubDate>
+      
+      <guid>https://catvelasquez.github.io/fabricaciondigital/docs/materiales/</guid>
+      <description>Reciclaje de papel y experimentación de materiales.</description>
     </item>
     
     <item>
