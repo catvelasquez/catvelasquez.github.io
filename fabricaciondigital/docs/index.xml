@@ -41,14 +41,15 @@
     <item>
       <title>Materiales</title>
       <link>https://catvelasquez.github.io/fabricaciondigital/docs/materiales/</link>
-      <pubDate>Wed, 17 Jun 2020 19:30:08 +1000</pubDate>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
       
       <guid>https://catvelasquez.github.io/fabricaciondigital/docs/materiales/</guid>
-      <description>Reciclaje de papel y experimentación de materiales.</description>
+      <description>Primera parte
+¿Para qué reciclar papel y cartón ? Las ventajas medioambientales de reciclar papel y cartón son muy diversas. Por cada tonelada de papel que se recoge y se recicla se ahorran dos metros cúbicos de vertedero, 140 litros de petróleo, 50.</description>
     </item>
     
     <item>
-      <title>Proceso Molde</title>
+      <title>Proceso Moldeado</title>
       <link>https://catvelasquez.github.io/fabricaciondigital/docs/molde/</link>
       <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
       
@@ -57,21 +58,12 @@
     </item>
     
     <item>
-      <title>Ejemplo Shortcodes</title>
-      <link>https://catvelasquez.github.io/fabricaciondigital/docs/ejemplo/</link>
-      <pubDate>Wed, 17 Jun 2020 19:30:08 +1000</pubDate>
+      <title>Conoce Biocono</title>
+      <link>https://catvelasquez.github.io/fabricaciondigital/docs/examen/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
       
-      <guid>https://catvelasquez.github.io/fabricaciondigital/docs/ejemplo/</guid>
-      <description>Uso de los Shortcodes para agregar contenido en el sitio de documentación.</description>
-    </item>
-    
-    <item>
-      <title>Ejemplos Markdown</title>
-      <link>https://catvelasquez.github.io/fabricaciondigital/docs/markdown/</link>
-      <pubDate>Wed, 17 Jun 2020 19:30:08 +1000</pubDate>
-      
-      <guid>https://catvelasquez.github.io/fabricaciondigital/docs/markdown/</guid>
-      <description>Ejemplos de uso de lenguaje Markdown para redactar las publicaciones.</description>
+      <guid>https://catvelasquez.github.io/fabricaciondigital/docs/examen/</guid>
+      <description>Biocono es un germinador y macetero, hecho con materiales reutilizados, biodegradables y orgánicos, el cual cuenta con un sistema de riego por capilaridad, esto quiere decir que la planta al formar raíces puede succionar agua según sus necesidades, a través de un cordón de algodón que conecta las raíces de las planta en la tierra con una fuente de agua.</description>
     </item>
     
   </channel>
